@@ -23,7 +23,7 @@ public class Utilities {
 
 	//@Value("${registration.processor.identityjson}")
 	//private String getRegProcessorIdentityJson;
-	String getRegProcessorIdentityJson="regProc/RegistrationProcessorIdentity.json";
+	String getRegProcessorIdentityJson="/RegistrationProcessorIdentity.json";
 
 	//@Value("${registration.processor.demographic.identity}")
 	private String getRegProcessorDemographicIdentity = "identity";

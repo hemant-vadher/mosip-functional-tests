@@ -7,8 +7,12 @@
 	<packaging>jar</packaging>
 	<name>io.mosip.automationtests</name>
 	<url>http://maven.apache.org</url>
-	<version>1.0.7</version>
-
+	<version>1.0.8</version>
+	<!-- <parent>
+		<groupId>io.mosip</groupId>
+		<artifactId>mosip-parent</artifactId>
+		<version>1.0.7</version>
+	</parent> -->
 	<properties>
 		<!-- kernel versions -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -146,7 +150,7 @@
 		<jackson.version>2.8.8</jackson.version>
 		<jackson.mapper.asl.version>1.7.1</jackson.mapper.asl.version>
 
-		<mosip.core.kernel.version>1.0.6-SNAPSHOT</mosip.core.kernel.version>
+		<mosip.core.kernel.version>1.0.8-SNAPSHOT</mosip.core.kernel.version>
 		<!-- Derby Version -->
 		<apache.derby.version>10.13.1.1</apache.derby.version>
 
@@ -164,7 +168,7 @@
 
 		<!-- automationtests version -->
 		<wink-json4j-provider.version>1.1.2-incubating</wink-json4j-provider.version>
-		<registration-services.version>1.0.8</registration-services.version>
+		<registration-services.version>1.0.7-SNAPSHOT</registration-services.version>
 		<kernel.version>1.0.6-SNAPSHOT</kernel.version>
 		<zjsonpatch.version>0.4.7</zjsonpatch.version>
 		<extentreports.aventstack.version>3.0.0</extentreports.aventstack.version>
@@ -437,7 +441,7 @@
 		<dependency>
 			<groupId>io.mosip.kernel</groupId>
 			<artifactId>kernel-crypto-jce</artifactId>
-			<version>1.0.6-SNAPSHOT</version>
+			<version>${kernel.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.wink</groupId>

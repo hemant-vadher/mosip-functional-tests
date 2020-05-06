@@ -61,6 +61,7 @@ import io.mosip.kernel.core.templatemanager.spi.TemplateManagerBuilder;
 import io.mosip.kernel.core.util.CryptoUtil;
 import io.mosip.kernel.core.util.DateUtils;
 import io.mosip.kernel.core.util.HMACUtils;
+import io.swagger.annotations.Api;
 
 /**
  * The Class AuthRequestController is used to automate the creation of Auth
@@ -69,6 +70,7 @@ import io.mosip.kernel.core.util.HMACUtils;
  * @author Arun Bose S
  */
 @RestController
+@Api(tags = { "Authentication Request Creation" })
 public class AuthRequestController {
 
 	private static final String DIGITAL_ID = "digitalId";
@@ -134,7 +136,7 @@ public class AuthRequestController {
 	private ObjectMapper mapper;
 
 	@Autowired
-	DigitalSign digitalSign;
+	JWSSignAndVerifyController jWSSignAndVerifyController;
 
 	@PostConstruct
 	public void idTemplateManagerPostConstruct() {
@@ -285,7 +287,7 @@ public class AuthRequestController {
 					if(isInternal) {
 						dataStr = new String(CryptoUtil.encodeBase64(dataStrJson.getBytes()));
 					} else {
-						dataStr = digitalSign.sign(dataStrJson);
+						dataStr = jWSSignAndVerifyController.sign(dataStrJson);
 					}
 					bioMap.put(DATA, dataStr);
 				} catch (KeyStoreException | CertificateException | UnrecoverableEntryException | JoseException e) {

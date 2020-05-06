@@ -266,8 +266,8 @@ public class BaseConfiguration extends AbstractTestNGSpringContextTests {
 				if (SessionContext.map().get(RegistrationConstants.ONBOARD_USER)!=null) {
 					// Onboard user
 					BiometricDTO bioData = null;
-					String biometricPath= CommonUtil.getResourcePath() +"/Registration/UserOnboardDetail/Resident_BiometricData.json";
-					String bioPath = "/Registration/UserOnboardDetail/Resident_BiometricData.json";
+					String biometricPath= CommonUtil.getResourcePath() +"/UserOnboardDetail/Resident_BiometricData.json";
+					String bioPath = "UserOnboardDetail/Resident_BiometricData.json";
 					ClassLoader classLoader = getClass().getClassLoader();
 					LOGGER.info("USERONBOARD SERVICE TEST - ", "AUTOMATION", "REG", "Path: " + bioPath);
 					bioData = commonUtil.getBiotestData(biometricPath);

@@ -6,7 +6,7 @@ This is a helper service module that can used for ID-Authentication functional t
 4. Encode/Decode from/to file - to do base-64-url encoding/decoding
 5. JWS Sign/Verify
 
-## Create Auth Request Service
+## Auth Request Creation Service 
 This service can be used for creating requrest body of Partner Authentication, Internal Authentication and KYC Authenication request.
 
 *POST /createAuthRequest?id=5879610697&idType=UIN&isInternal=false&isKyc=false*
@@ -102,6 +102,27 @@ http://localhost:8081/v1/identity/createAuthRequest?id=5879610697&idType=UIN&isI
 ````
 
 ### Reference
-The complete reference of the ID-Authentication Partner Demo services can be viewed in below link (assuming it is launched in localhost:8081)
+The complete reference of the ID-Authenication Partner Demo services can be viewed in below link (assuming it is launched in localhost:8081)
 
 http://localhost:8081/v1/identity/v2/api-docs
+
+## Device Registration Helper Services
+Below are the various helper services that can be used for device registration.
+
+* **/registerDeviceInfo** - This service is used to register device with the device information of a device got from the MDS service.
+* **/registerDeviceInfos** - This service is used to register devices with the array of device information of multiple devices got from the MDS service.
+* **/registerDecodedDeviceInfo** - This service is used to register device with the decoded device information of a device got from the MDS service.
+* **/decodeDeviceInfo** - This service is used to decode the device information of a device got from the MDS service.
+* **/decodeDeviceInfos** - This service is used to decode the array of device information of multiple devices got from the MDS service.
+* **/validateDevice** - This service is used to validate the device information of a device got from the MDS service.
+* **/validateDeviceInfoDecoded** - This service is used to validate the decoded device information of a device got from the MDS service.
+
+**Please Note:** 
+1. The application properties needs to be confgirued properly with below properties so that the the device registration should work.
+* &lt;environment&gt;.db.url - for example `qa.db.url=jdbc:postgresql://127.0.0.1:9001/mosip_master`
+* db.user - base64 encoded
+* db.pass - base64 encoded
+
+2. For registering device for 'Registration' purpose, it should be made sure to add the device to the master data database before invoking the device registration services.
+
+3. This device registration service is compatible with Kernel MasterData device registration API of version greater than or equal to 1.0.6.

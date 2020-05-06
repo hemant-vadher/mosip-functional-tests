@@ -25,7 +25,7 @@ import org.testng.annotations.Test;
 import org.testng.internal.BaseTestMethod;
 import org.testng.internal.TestResult;
 
-
+import com.mchange.util.AssertException;
 
 import io.mosip.kernel.core.exception.ExceptionUtils;
 import io.mosip.kernel.core.exception.IOException;
@@ -81,7 +81,7 @@ public class DocumentScannerServiceTest extends BaseConfiguration implements ITe
 			mTestCaseName = "regClient_DocumentScannerService_isScannerConnected";
 			boolean isConnected = documentScannerServiceImpl.isConnected();
 			Assert.assertNotNull(isConnected);
-		} catch (AssertionError assertException) {
+		} catch (AssertException assertException) {
 			// TODO: handle exception
 			logger.info(LOG_PKT_HANLDER, APPLICATION_NAME, APPLICATION_ID,
 					ExceptionUtils.getStackTrace(assertException));
@@ -98,7 +98,7 @@ public class DocumentScannerServiceTest extends BaseConfiguration implements ITe
 			intializeValues();
 			bufferedImage = documentScannerServiceImpl.scan();
 			Assert.assertNotNull(bufferedImage);
-		} catch (AssertionError assertException) {
+		} catch (AssertException assertException) {
 			// TODO: handle exception
 			logger.info(LOG_PKT_HANLDER, APPLICATION_NAME, APPLICATION_ID,
 					ExceptionUtils.getStackTrace(assertException));
@@ -114,7 +114,7 @@ public class DocumentScannerServiceTest extends BaseConfiguration implements ITe
 			mTestCaseName = "regClient_DocumentScannerService_getSinglePDFInBytes";
 			byte[] data = documentScannerServiceImpl.asPDF(bufferedImages);
 			Assert.assertNotNull(data);
-		} catch (AssertionError assertException) {
+		} catch (AssertException assertException) {
 			// TODO: handle exception
 			logger.info(LOG_PKT_HANLDER, APPLICATION_NAME, APPLICATION_ID,
 					ExceptionUtils.getStackTrace(assertException));
@@ -134,7 +134,7 @@ public class DocumentScannerServiceTest extends BaseConfiguration implements ITe
 			mTestCaseName = "regClient_DocumentScannerService_getSingleImageFromList";
 			byte[] data = documentScannerServiceImpl.asImage(bufferedImages);
 			Assert.assertNotNull(data);
-		} catch (AssertionError assertException) {
+		} catch (AssertException assertException) {
 			// TODO: handle exception
 			logger.info(LOG_PKT_HANLDER, APPLICATION_NAME, APPLICATION_ID,
 					ExceptionUtils.getStackTrace(assertException));
@@ -190,7 +190,7 @@ public class DocumentScannerServiceTest extends BaseConfiguration implements ITe
 			mTestCaseName = "regClient_DocumentScannerService_getImageBytesFromBufferedImage";
 			byte[] data = documentScannerServiceImpl.getImageBytesFromBufferedImage(bufferedImage);
 			Assert.assertNotNull(data);
-		} catch (AssertionError assertException) {
+		} catch (AssertException assertException) {
 			// TODO: handle exception
 			logger.info(LOG_PKT_HANLDER, APPLICATION_NAME, APPLICATION_ID,
 					ExceptionUtils.getStackTrace(assertException));
@@ -209,7 +209,7 @@ public class DocumentScannerServiceTest extends BaseConfiguration implements ITe
 			// intializeValues();
 			mTestCaseName = "regClient_DocumentScannerService_getImageBytesFromBufferedImageTestNull";
 			byte[] data = documentScannerServiceImpl.getImageBytesFromBufferedImage(null);
-		} catch (AssertionError assertException) {
+		} catch (AssertException assertException) {
 			// TODO: handle exception
 			logger.info(LOG_PKT_HANLDER, APPLICATION_NAME, APPLICATION_ID,
 					ExceptionUtils.getStackTrace(assertException));
@@ -233,7 +233,7 @@ public class DocumentScannerServiceTest extends BaseConfiguration implements ITe
 			mTestCaseName = "regClient_DocumentScannerService_pdfToImagesTestNull";
 			byte[] data = documentScannerServiceImpl.asPDF(bufferedImages);
 			documentScannerServiceImpl.pdfToImages(data);
-		} catch (AssertionError assertException) {
+		} catch (AssertException assertException) {
 			// TODO: handle exception
 			logger.info(LOG_PKT_HANLDER, APPLICATION_NAME, APPLICATION_ID,
 					ExceptionUtils.getStackTrace(assertException));
@@ -257,7 +257,7 @@ public class DocumentScannerServiceTest extends BaseConfiguration implements ITe
 			mTestCaseName = "regClient_DocumentScannerService_getSingleImageFromListTestNull";
 			byte[] data = documentScannerServiceImpl.asImage(null);
 			Assert.assertNull(data);
-		} catch (AssertionError assertException) {
+		} catch (AssertException assertException) {
 			// TODO: handle exception
 			logger.info(LOG_PKT_HANLDER, APPLICATION_NAME, APPLICATION_ID,
 					ExceptionUtils.getStackTrace(assertException));
