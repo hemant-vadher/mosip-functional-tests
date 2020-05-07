@@ -44,7 +44,7 @@
 			<class
 				name="io.mosip.authentication.idRepository.prerequiste.DeleteUinRecord" />
 		</classes>
-	</test>
+	</test>  -->
   <test name="AuthenticationTest">
 		<classes>
 			<class
@@ -83,17 +83,9 @@
 				name="io.mosip.authentication.tests.InternalOtpAuthentication" />
 			<class name="io.mosip.authentication.tests.UnlockUIN" />
 		</classes>
-	</test>  -->
+	</test>
 	<test name="Resident Tests">
 		<classes>
-		<class
-				name="io.mosip.authentication.idRepository.prerequiste.CreateUinRecord" />
-			<class
-				name="io.mosip.authentication.idRepository.prerequiste.UpdateUinRecord" />
-			<class
-				name="io.mosip.authentication.idRepository.prerequiste.CreateVID" />
-			<class
-				name="io.mosip.authentication.idRepository.prerequiste.UpdateVID" />
 		
 			<class name="io.mosip.resident.tests.UpdateUIN" />
 			<class name="io.mosip.resident.tests.GenerateVID" />
