@@ -26,20 +26,19 @@ public class ExtractResource {
 	public static void extractResourceFromJar() {
 		getListOfFilesFromJarAndCopyToExternalResource("ida/");
 		getListOfFilesFromJarAndCopyToExternalResource("kernel/");
-		//getListOfFilesFromJarAndCopyToExternalResource("preReg/");
+		getListOfFilesFromJarAndCopyToExternalResource("preReg/");
 		getListOfFilesFromJarAndCopyToExternalResource("config/");
-		//getListOfFilesFromJarAndCopyToExternalResource("regProc/");
+		getListOfFilesFromJarAndCopyToExternalResource("regProc/");
 		getListOfFilesFromJarAndCopyToExternalResource("idRepository/");
-		//getListOfFilesFromJarAndCopyToExternalResource("Registration/");
+		getListOfFilesFromJarAndCopyToExternalResource("Registration/");
 		getListOfFilesFromJarAndCopyToExternalResource("admin/");
 		getListOfFilesFromJarAndCopyToExternalResource("resident/");
-		//getListOfFilesFromJarAndCopyToExternalResource("reg/");
+		getListOfFilesFromJarAndCopyToExternalResource("reg/");
 		getListOfFilesFromJarAndCopyToExternalResource("customize-emailable-report-template.html");
 		getListOfFilesFromJarAndCopyToExternalResource("testngapi.xml");
-		getListOfFilesFromJarAndCopyToExternalResource("version.txt");
 		getListOfFilesFromJarAndCopyToExternalResource("metadata.xml");
 		getListOfFilesFromJarAndCopyToExternalResource("log4j.properties");
-		getListOfFilesFromJarAndCopyToExternalResource("UserOnboardDetail/");
+		getListOfFilesFromJarAndCopyToExternalResource("healthCheck/");
 		getListOfFilesFromJarAndCopyToExternalResource("labels_ar.properties");
 		getListOfFilesFromJarAndCopyToExternalResource("labels_en.properties");
 		getListOfFilesFromJarAndCopyToExternalResource("labels_fr.properties");
@@ -49,8 +48,7 @@ public class ExtractResource {
 		getListOfFilesFromJarAndCopyToExternalResource("spring.properties");
 		getListOfFilesFromJarAndCopyToExternalResource("validations.properties");
 		getListOfFilesFromJarAndCopyToExternalResource("db");
-		getListOfFilesFromJarAndCopyToExternalResource("kernelqa.cfg.xml");
-		getListOfFilesFromJarAndCopyToExternalResource("preregqa.cfg.xml");
+		getListOfFilesFromJarAndCopyToExternalResource("dbFiles/");
 	}
 	
 	/**

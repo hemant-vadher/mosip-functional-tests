@@ -36,13 +36,11 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 
 import io.mosip.authentication.core.constant.IdAuthConfigKeyConstants;
 import io.mosip.authentication.core.logger.IdaLogger;
-import io.mosip.authentication.partnerdemo.service.controller.Encrypt.SplittedEncryptedData;
 import io.mosip.authentication.partnerdemo.service.dto.CryptomanagerRequestDto;
 import io.mosip.kernel.core.http.RequestWrapper;
 import io.mosip.kernel.core.logger.spi.Logger;
 import io.mosip.kernel.core.util.CryptoUtil;
-import io.mosip.kernel.core.util.DateUtils;
-import io.swagger.annotations.Api;;
+import io.mosip.kernel.core.util.DateUtils;;
 
 /**
  * The Class Decrypt is used to decrypt the KYC Response.
@@ -50,7 +48,6 @@ import io.swagger.annotations.Api;;
  * @author Sanjay Murali
  */
 @RestController
-@Api(tags = { "Decrypt" })
 public class Decrypt {
 
 	@Autowired
@@ -112,7 +109,7 @@ public class Decrypt {
 			@RequestParam(name="salt",required=false) @Nullable String salt,
 			@RequestParam(name="aad",required=false) @Nullable String aad)
 			throws IOException, InvalidKeySpecException, NoSuchAlgorithmException, KeyManagementException {
-		String data = combine(splittedData.getEncryptedData(), splittedData.getEncryptedSessionKey());
+		String data = combine(splittedData.getRequest(), splittedData.getRequestSessionKey());
 		if (refId == null) {
 			refId = getRefId(isInternal, isBiometrics);
 		}
@@ -232,5 +229,23 @@ public class Decrypt {
     	return request;
     }
 	
+	@SuppressWarnings("unused")
+	private static class SplittedEncryptedData {
+		String request;
+		String requestSessionKey;
+		public String getRequest() {
+			return request;
+		}
+		public void setRequest(String request) {
+			this.request = request;
+		}
+		public String getRequestSessionKey() {
+			return requestSessionKey;
+		}
+		public void setRequestSessionKey(String requestSessionKey) {
+			this.requestSessionKey = requestSessionKey;
+		}
+		
+	}
 
 }

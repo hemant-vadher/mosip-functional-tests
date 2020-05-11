@@ -71,7 +71,6 @@ import io.mosip.kernel.core.logger.spi.Logger;
 import io.mosip.kernel.core.util.CryptoUtil;
 import io.mosip.kernel.core.util.DateUtils;
 import io.mosip.kernel.core.util.HMACUtils;
-import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 /**
@@ -81,7 +80,6 @@ import io.swagger.annotations.ApiOperation;
  */
 
 @RestController
-@Api(tags = { "Encrypt" })
 public class Encrypt {
 
 	@Autowired

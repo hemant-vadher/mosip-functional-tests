@@ -8,11 +8,7 @@
 	<name>io.mosip.automationtests</name>
 	<url>http://maven.apache.org</url>
 	<version>1.0.8</version>
-	<!-- <parent>
-		<groupId>io.mosip</groupId>
-		<artifactId>mosip-parent</artifactId>
-		<version>1.0.7</version>
-	</parent> -->
+
 	<properties>
 		<!-- kernel versions -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -72,8 +68,6 @@
 
 		<!-- json -->
 		<jackson.version>2.9.5</jackson.version>
-		<jackson.datatype.version>2.9.8</jackson.datatype.version>
-		<jackson.databind>2.9.6</jackson.databind>
 		<json.utility.version>20180130</json.utility.version>
 		<json.schema.validator.version>2.2.10</json.schema.validator.version>
 		<json.version>20180130</json.version>
@@ -147,10 +141,8 @@
 		<apache.commons.dpce.version>2.1.1</apache.commons.dpce.version>
 
 		<!-- Jackson -->
-		<jackson.version>2.8.8</jackson.version>
-		<jackson.mapper.asl.version>1.7.1</jackson.mapper.asl.version>
 
-		<mosip.core.kernel.version>1.0.8-SNAPSHOT</mosip.core.kernel.version>
+		<mosip.core.kernel.version>1.0.5</mosip.core.kernel.version>
 		<!-- Derby Version -->
 		<apache.derby.version>10.13.1.1</apache.derby.version>
 
@@ -168,8 +160,7 @@
 
 		<!-- automationtests version -->
 		<wink-json4j-provider.version>1.1.2-incubating</wink-json4j-provider.version>
-		<registration-services.version>1.0.7-SNAPSHOT</registration-services.version>
-		<kernel.version>1.0.6-SNAPSHOT</kernel.version>
+		<kernel.version>1.0.5</kernel.version>
 		<zjsonpatch.version>0.4.7</zjsonpatch.version>
 		<extentreports.aventstack.version>3.0.0</extentreports.aventstack.version>
 		<extentreports.relevantcodes.version>2.41.2</extentreports.relevantcodes.version>
@@ -187,11 +178,6 @@
 			<version>3.25.0-GA</version>
 		</dependency>
 
-		<dependency>
-			<groupId>io.mosip.registration</groupId>
-			<artifactId>registration-services</artifactId>
-			<version>${registration-services.version}</version>
-		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-collections4</artifactId>
@@ -250,20 +236,20 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
-			<version>2.9.5</version>
+			<version>${jackson.version}</version>
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
-			<version>2.9.5</version>
+			<version>${jackson.version}</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.9.5</version>
+			<version>2.9.10.4</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.ws.rs</groupId>
@@ -274,7 +260,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.dataformat</groupId>
 			<artifactId>jackson-dataformat-xml</artifactId>
-			<version>2.9.0</version>
+			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.json</groupId>
@@ -325,7 +311,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-jsr310</artifactId>
-			<version>2.9.5</version>
+			<version>${jackson.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
@@ -441,7 +427,7 @@
 		<dependency>
 			<groupId>io.mosip.kernel</groupId>
 			<artifactId>kernel-crypto-jce</artifactId>
-			<version>${kernel.version}</version>
+			<version>1.0.5</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.wink</groupId>
@@ -475,6 +461,15 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	<dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>4.5.2</version>
+		</dependency>
+	</dependencies>
+</dependencyManagement>
 
 	<build>
 		<pluginManagement>

@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.mosip.kernel.core.util.CryptoUtil;
-import io.swagger.annotations.Api;
 
 /**
  * 
@@ -22,7 +21,6 @@ import io.swagger.annotations.Api;
  * @author Arun Bose S
  */
 @RestController
-@Api(tags = { "Decode" })
 public class Decode {
 
 	/**
