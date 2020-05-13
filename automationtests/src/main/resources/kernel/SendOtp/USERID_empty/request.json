@@ -5,7 +5,7 @@
     "appId": "prereg",
     "context": "auth-otp",
     "otpChannel": [
-      "mobile"
+      "PHONE"
     ],
     "templateVariables": {},
     "userId": "",
