@@ -11,16 +11,19 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
+import org.assertj.core.util.Arrays;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.testng.ITest;
 import org.testng.ITestResult;
 import org.testng.Reporter;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -50,6 +53,7 @@ import io.mosip.authentication.testdata.TestDataUtil;
 import io.mosip.kernel.service.ApplicationLibrary;
 import io.mosip.kernel.util.CommonLibrary;
 import io.mosip.kernel.util.KernelAuthentication;
+import io.mosip.kernel.util.KernelDataBaseAccess;
 import io.restassured.response.Response;
 
 public class DeviceSearch extends AdminTestUtil implements ITest {
@@ -59,6 +63,7 @@ public class DeviceSearch extends AdminTestUtil implements ITest {
 	private String TESTDATA_FILENAME;
 	private String testType;
 	private int invocationCount = 0;
+	KernelDataBaseAccess masterDB = new KernelDataBaseAccess();
 	/**
 	 * Set Test Type - Smoke, Regression or Integration
 	 * 
@@ -67,6 +72,14 @@ public class DeviceSearch extends AdminTestUtil implements ITest {
 	@BeforeClass
 	public void setTestType() {
 		this.testType = RunConfigUtil.getTestLevel();
+		/*String crtQuerKeys[] = queries.get("allAutoCrt").toString().split(",");
+		List<String> crtQueries = new LinkedList<String>();
+		for(String queryKeys: crtQuerKeys)
+			crtQueries.add(queries.get(queryKeys).toString());
+		if (masterDB.executeQueries(crtQueries, "masterdata"))
+			logger.info("created test data for automation");
+		else
+			logger.info("not able to create test data for automation using query.properties");*/
 	}
 
 	/**
@@ -113,8 +126,8 @@ public class DeviceSearch extends AdminTestUtil implements ITest {
 			}			
 		}
 		testCaseName = String.format(testCase);
-		if(!kernelCmnLib.isValidToken(adminCookie))
-			adminCookie = kernelAuthLib.getAuthForAdmin();
+		if(!kernelCmnLib.isValidToken(autoTstUsrCkie))
+			autoTstUsrCkie = kernelAuthLib.getAuthForAutoUser();
 	}
 
 	/**
@@ -182,7 +195,7 @@ public class DeviceSearch extends AdminTestUtil implements ITest {
 		displayContentInFile(testCaseName.listFiles(), "request");
 		String url = RunConfigUtil.objRunConfig.getAdminEndPointUrl() + RunConfigUtil.objRunConfig.getDeviceSearchPath();
 		logger.info("******Post request Json to EndPointUrl: " + url+" *******");		
-		postRequestAndGenerateOuputFileWithCookie(testCaseName.listFiles(), url, "request", "output-1-actual-response", 0, AUTHORIZATHION_COOKIENAME, adminCookie);
+		postRequestAndGenerateOuputFileWithCookie(testCaseName.listFiles(), url, "request", "output-1-actual-response", 0, AUTHORIZATHION_COOKIENAME, autoTstUsrCkie);
 		Map<String, List<OutputValidationDto>> ouputValid = OutputValidationUtil.doOutputValidation(
 				FileUtil.getFilePath(testCaseName, "output-1-actual").toString(),
 				FileUtil.getFilePath(testCaseName, "output-1-expected").toString());
@@ -192,4 +205,18 @@ public class DeviceSearch extends AdminTestUtil implements ITest {
 	
    }
 
+	/**
+	 * this method is for deleting or updating the inserted data in db for testing 
+	 */
+	@AfterClass(alwaysRun = true)
+	public void cleanup() throws AdminTestException {
+		/*String dltQueryKeys[] = queries.get("allAutoDlt").toString().split(",");
+		List<String> dltQueries = new LinkedList<String>();
+		for(String queryKeys: dltQueryKeys)
+			dltQueries.add(queries.get(queryKeys).toString());
+		if (masterDB.executeQueries(dltQueries, "masterdata"))
+			logger.info("deleted test data for automation");
+		else
+			logger.info("not able to delete test data for automation using query.properties");*/
+	}
 }

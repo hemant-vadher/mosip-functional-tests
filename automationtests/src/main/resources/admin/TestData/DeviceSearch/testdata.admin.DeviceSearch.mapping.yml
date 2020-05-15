@@ -12,16 +12,8 @@ testdata:
       requesttime: $TIMESTAMPZ$
       
     output.output-1-expected-pos-response:
-     namedata0: $TestData:valid_Device_Name_eng_Equals$
-     langCodedata0: $TestData:valid_LanguageCodeEng$ 
-     responsetime: $IGNORE$ 
-     createdDateTimedata0: $IGNORE$
-     iddata0: $IGNORE$
-     serialNumdata0: $IGNORE$
-     macAddressdata0: $IGNORE$
-     deviceSpecIddata0: $IGNORE$     
-     ipAddressdata0: $IGNORE$
-     mapStatusdata0: $IGNORE$
+     responsetime: $IGNORE$
+     totalRecord: $IGNORE$
    
   Admin_DeviceSearch_Equals_Name_ara_smoke:
     input.search-request:
@@ -35,43 +27,12 @@ testdata:
       languageCode: $TestData:valid_LanguageCodeArabic$
       requesttime: $TIMESTAMPZ$
       
-    output.output-1-expected-pos-response:
-      namedata0: $TestData:valid_Device_Name_ara_Equals$
-      langCodedata0: $TestData:valid_LanguageCodeArabic$   
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      mapStatusdata0: $IGNORE$ 
+    output.output-1-expected-pos3-response:  
+      responsetime: $IGNORE$
+      totalRecord: $IGNORE$
       
-  Admin_DeviceSearch_Equals_Name_fra_smoke:
-    input.search-request:
-      columnNamefilters0: $TestData:valid_Search_ColumnNameAsName$
-      typefilters0: $TestData:valid_SearchTypeEquals$
-      valuefilters0: $TestData:valid_Device_Name_fra_Equals$
-      sortFieldsort0: $TestData:valid_Search_ColumnNameAsName$
-      sortTypesort0: $TestData:valid_SortTypeAscending$
-      pageStart: $TestData:valid_PageStart$
-      pageFetch: $TestData:valid_PageFetch$
-      languageCode: $TestData:valid_LanguageCodeFrench$
-      requesttime: $TIMESTAMPZ$
       
-    output.output-1-expected-pos-response:
-      namedata0: $TestData:valid_Device_Name_fra_Equals$
-      langCodedata0: $TestData:valid_LanguageCodeFrench$        
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      mapStatusdata0: $IGNORE$
-      
-  Admin_DeviceSearch_Equals_SerialNo_smoke:
+  Admin_DeviceSearch_Equals_SerialNo:
     input.search-request:
       columnNamefilters0: $TestData:valid_Search_ColumnNameAsSerialNum$
       typefilters0: $TestData:valid_SearchTypeEquals$
@@ -84,19 +45,10 @@ testdata:
       requesttime: $TIMESTAMPZ$
       
     output.output-1-expected-pos-response:
-      serialNumdata0: $TestData:valid_Device_SerialNum_Equals$
-      langCodedata0: $TestData:valid_LanguageCodeEng$ 
       responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      namedata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
       totalRecord: $IGNORE$
-      mapStatusdata0: $IGNORE$  
       
-  Admin_DeviceSearch_Equals_MacAddress_smoke:
+  Admin_DeviceSearch_Equals_MacAddress:
     input.search-request:
       columnNamefilters0: $TestData:valid_Search_ColumnNameAsMacAddress$
       typefilters0: $TestData:valid_SearchTypeEquals$
@@ -108,20 +60,11 @@ testdata:
       languageCode: $TestData:valid_LanguageCodeArabic$
       requesttime: $TIMESTAMPZ$
       
-    output.output-1-expected-pos-response:
-      macAddressdata0: $TestData:valid_Device_MacAddress_Equals$
-      langCodedata0: $TestData:valid_LanguageCodeArabic$
-      namedata0: $IGNORE$
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$     
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      totalRecord: $IGNORE$  
-      mapStatusdata0: $IGNORE$
+    output.output-1-expected-pos1-response:
+      responsetime: $IGNORE$
+      totalRecord: $IGNORE$
       
-  Admin_DeviceSearch_Equals_IsActive_smoke:
+  Admin_DeviceSearch_Equals_IsActive:
     input.search-request:
       columnNamefilters0: $TestData:valid_Search_ColumnNameAsIsActive$
       typefilters0: $TestData:valid_SearchTypeEquals$
@@ -134,21 +77,9 @@ testdata:
       requesttime: $TIMESTAMPZ$
       
     output.output-1-expected-pos-response:
-      isActivedata0: $TestData:valid_Device_IsActive_Equals$
-      langCodedata0: $TestData:valid_LanguageCodeEng$ 
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      namedata0: $IGNORE$
-      createdBydata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$  
-      serialNumdata0: $IGNORE$ 
-      totalRecord: $IGNORE$
-      mapStatusdata0: $IGNORE$ 
+      responsetime: $IGNORE$
   
-  Admin_DeviceSearch_Equals_MapStatus_smoke:
+  Admin_DeviceSearch_Equals_MapStatus:
     input.search-request:
       columnNamefilters0: $TestData:valid_Search_ColumnNameAsMapStatus$
       typefilters0: $TestData:valid_SearchTypeEquals$
@@ -159,22 +90,28 @@ testdata:
       pageFetch: $TestData:valid_PageFetch$
       languageCode: $TestData:valid_LanguageCodeEng$
       requesttime: $TIMESTAMPZ$
-      
+
     output.output-1-expected-pos-response:
-      isActivedata0: $IGNORE$
-      langCodedata0: $TestData:valid_LanguageCodeEng$ 
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      namedata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$  
-      serialNumdata0: $IGNORE$ 
-      totalRecord: $IGNORE$ 
-      mapStatusdata0: $IGNORE$     
+      responsetime: $IGNORE$
+      totalRecord: $IGNORE$    
       
-  Admin_DeviceSearch_Equals_DeviceTypeName_smoke:
+  Admin_DeviceSearch_Equals_MapStatus_unAssigned:
+    input.search-request:
+      columnNamefilters0: $TestData:valid_Search_ColumnNameAsMapStatus$
+      typefilters0: $TestData:valid_SearchTypeEquals$
+      valuefilters0: $TestData:valid_Device_MapStatus_Equals_unAssign$
+      sortFieldsort0: $TestData:valid_Search_ColumnNameAsName$
+      sortTypesort0: $TestData:valid_SortTypeAscending$
+      pageStart: $TestData:valid_PageStart$
+      pageFetch: $TestData:valid_PageFetch$
+      languageCode: $TestData:valid_LanguageCodeEng$
+      requesttime: $TIMESTAMPZ$
+      
+    output.output-1-expected-pos2-response:
+      responsetime: $IGNORE$
+      totalRecord: $IGNORE$       
+      
+  Admin_DeviceSearch_Equals_DeviceTypeName:
     input.search-request:
       columnNamefilters0: $TestData:valid_Search_ColumnNameAsDeviceTypeName$
       typefilters0: $TestData:valid_SearchTypeEquals$
@@ -186,21 +123,10 @@ testdata:
       languageCode: $TestData:valid_LanguageCodeEng$
       requesttime: $TIMESTAMPZ$
       
-    output.output-1-expected-pos-response:
-      isActivedata0: $IGNORE$ 
-      langCodedata0: $TestData:valid_LanguageCodeEng$ 
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      namedata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$  
-      serialNumdata0: $IGNORE$ 
-      totalRecord: $IGNORE$ 
-      mapStatusdata0: $IGNORE$       
+    output.output-1-expected-pos-response: 
+      responsetime: $IGNORE$      
  
-  Admin_DeviceSearch_Equals_DeviceSpecId_smoke:
+  Admin_DeviceSearch_Equals_DeviceSpecId:
     input.search-request:
       columnNamefilters0: $TestData:valid_Search_ColumnNameAsDeviceSpecId$
       typefilters0: $TestData:valid_SearchTypeEquals$
@@ -212,20 +138,10 @@ testdata:
       languageCode: $TestData:valid_LanguageCodeEng$
       requesttime: $TIMESTAMPZ$
       
-    output.output-1-expected-pos-response:
-      namedata0: $IGNORE$
-      langCodedata0: $TestData:valid_LanguageCodeEng$ 
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $TestData:valid_DeviceSpecId_Equals$  
-      ipAddressdata0: $IGNORE$    
-      totalRecord: $IGNORE$   
-      mapStatusdata0: $IGNORE$
+    output.output-1-expected-pos-response: 
+      responsetime: $IGNORE$
 
-  Admin_DeviceSearch_Invalid_Value_Name_smoke:
+  Admin_DeviceSearch_Invalid_Value_Name:
     input.search-request:
       columnNamefilters0: $TestData:valid_Search_ColumnNameAsName$
       typefilters0: $TestData:valid_SearchTypeEquals$
@@ -268,18 +184,8 @@ testdata:
       pageFetch: $TestData:valid_PageFetch$
       languageCode: $TestData:valid_LanguageCodeEng$
       
-    output.output-1-expected-pos-response:     
-      namedata0: $TestData:valid_Device_Name_eng_Equals$
-      langCodedata0: $TestData:valid_LanguageCodeEng$  
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      totalRecord: $IGNORE$
-      mapStatusdata0: $IGNORE$
+    output.output-1-expected-pos-response: 
+      responsetime: $IGNORE$
       
   Admin_DeviceSearch_ASC_Name_ara_pos:
     input.search-request:
@@ -292,42 +198,8 @@ testdata:
       pageFetch: $TestData:valid_PageFetch$
       languageCode: $TestData:valid_LanguageCodeArabic$
       
-    output.output-1-expected-pos-response:  
-      namedata0: $TestData:valid_Device_Name_ara_Equals$   
-      langCodedata0: $TestData:valid_LanguageCodeArabic$            
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      totalRecord: $IGNORE$
-      mapStatusdata0: $IGNORE$
-      
-  Admin_DeviceSearch_ASC_Name_fra_pos:
-    input.search-request:
-      columnNamefilters0: $TestData:valid_Search_ColumnNameAsName$
-      typefilters0: $TestData:valid_SearchTypeContains$
-      valuefilters0: $TestData:valid_Device_Name_fra_Equals$
-      sortFieldsort0: $TestData:valid_Search_ColumnNameAsName$
-      sortTypesort0: $TestData:valid_SortTypeAscending$
-      pageStart: $TestData:valid_PageStart$
-      pageFetch: $TestData:valid_PageFetch$
-      languageCode: $TestData:valid_LanguageCodeFrench$
-      
-    output.output-1-expected-pos-response:     
-      namedata0: $TestData:valid_Device_Name_fra_Equals$
-      langCodedata0: $TestData:valid_LanguageCodeFrench$   
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      totalRecord: $IGNORE$
-      mapStatusdata0: $IGNORE$
+    output.output-1-expected-pos1-response:          
+      responsetime: $IGNORE$
       
   Admin_DeviceSearch_DESC_Name_eng_pos:
     input.search-request:
@@ -340,18 +212,8 @@ testdata:
       pageFetch: $TestData:valid_PageFetch$
       languageCode: $TestData:valid_LanguageCodeEng$
       
-    output.output-1-expected-pos-response:    
-      namedata0: $IGNORE$
-      langCodedata0: $TestData:valid_LanguageCodeEng$        
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      totalRecord: $IGNORE$
-      mapStatusdata0: $IGNORE$
+    output.output-1-expected-pos2-response:       
+      responsetime: $IGNORE$
      
   Admin_DeviceSearch_DESC_Name_ara_pos:
     input.search-request:
@@ -364,42 +226,8 @@ testdata:
       pageFetch: $TestData:valid_PageFetch$
       languageCode: $TestData:valid_LanguageCodeArabic$
       
-    output.output-1-expected-pos-response:     
-      langCodedata0: $TestData:valid_LanguageCodeArabic$            
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      totalRecord: $IGNORE$
-      namedata0: $IGNORE$
-      mapStatusdata0: $IGNORE$
-      
-  Admin_DeviceSearch_DESC_Name_fra_pos:
-    input.search-request:
-      columnNamefilters0: $TestData:valid_Search_ColumnNameAsName$
-      typefilters0: $TestData:valid_SearchTypeContains$
-      valuefilters0: $TestData:valid_Device_Name_fra_Equals$
-      sortFieldsort0: $TestData:valid_Search_ColumnNameAsName$
-      sortTypesort0: $TestData:valid_SortTypeDescending$
-      pageStart: $TestData:valid_PageStart$
-      pageFetch: $TestData:valid_PageFetch$
-      languageCode: $TestData:valid_LanguageCodeFrench$
-      
-    output.output-1-expected-pos-response:     
-      namedata0: $IGNORE$
-      langCodedata0: $TestData:valid_LanguageCodeFrench$        
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      totalRecord: $IGNORE$
-      mapStatusdata0: $IGNORE$
+    output.output-1-expected-pos3-response:             
+      responsetime: $IGNORE$
       
   Admin_DeviceSearch_ASC_DeviceTypeName_eng_pos:
     input.search-request:
@@ -412,18 +240,8 @@ testdata:
       pageFetch: $TestData:valid_PageFetch$
       languageCode: $TestData:valid_LanguageCodeEng$
       
-    output.output-1-expected-pos-response:     
-      namedata0: $IGNORE$
-      langCodedata0: $TestData:valid_LanguageCodeEng$  
+    output.output-1-expected-pos-response: 
       responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      totalRecord: $IGNORE$
-      mapStatusdata0: $IGNORE$
       
   Admin_DeviceSearch_ASC_DeviceTypeName_ara_pos:
     input.search-request:
@@ -436,42 +254,8 @@ testdata:
       pageFetch: $TestData:valid_PageFetch$
       languageCode: $TestData:valid_LanguageCodeArabic$
       
-    output.output-1-expected-pos-response:  
-      namedata0: $IGNORE$  
-      langCodedata0: $TestData:valid_LanguageCodeArabic$            
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      totalRecord: $IGNORE$
-      mapStatusdata0: $IGNORE$
-      
-  Admin_DeviceSearch_ASC_DeviceTypeName_fra_pos:
-    input.search-request:
-      columnNamefilters0: $TestData:valid_Search_ColumnNameAsDeviceTypeName$
-      typefilters0: $TestData:valid_SearchTypeContains$
-      valuefilters0: $TestData:valid_DeviceTypeName_fra_Equals$
-      sortFieldsort0: $TestData:valid_Search_ColumnNameAsName$
-      sortTypesort0: $TestData:valid_SortTypeAscending$
-      pageStart: $TestData:valid_PageStart$
-      pageFetch: $TestData:valid_PageFetch$
-      languageCode: $TestData:valid_LanguageCodeFrench$
-      
-    output.output-1-expected-pos-response:     
-      namedata0: $IGNORE$
-      langCodedata0: $TestData:valid_LanguageCodeFrench$   
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      totalRecord: $IGNORE$ 
-      mapStatusdata0: $IGNORE$    
+    output.output-1-expected-pos1-response:            
+      responsetime: $IGNORE$    
       
   Admin_DeviceSearch_DESC_DeviceTypeName_eng_pos:
     input.search-request:
@@ -484,18 +268,8 @@ testdata:
       pageFetch: $TestData:valid_PageFetch$
       languageCode: $TestData:valid_LanguageCodeEng$
       
-    output.output-1-expected-pos-response:     
-      namedata0: $IGNORE$
-      langCodedata0: $TestData:valid_LanguageCodeEng$  
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      totalRecord: $IGNORE$
-      mapStatusdata0: $IGNORE$
+    output.output-1-expected-pos2-response:  
+      responsetime: $IGNORE$
       
   Admin_DeviceSearch_DESC_DeviceTypeName_ara_pos:
     input.search-request:
@@ -508,42 +282,8 @@ testdata:
       pageFetch: $TestData:valid_PageFetch$
       languageCode: $TestData:valid_LanguageCodeArabic$
       
-    output.output-1-expected-pos-response:  
-      namedata0: $IGNORE$  
-      langCodedata0: $TestData:valid_LanguageCodeArabic$            
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      totalRecord: $IGNORE$
-      mapStatusdata0: $IGNORE$
-      
-  Admin_DeviceSearch_DESC_DeviceTypeName_fra_pos:
-    input.search-request:
-      columnNamefilters0: $TestData:valid_Search_ColumnNameAsDeviceTypeName$
-      typefilters0: $TestData:valid_SearchTypeContains$
-      valuefilters0: $TestData:valid_DeviceTypeName_fra_Equals$
-      sortFieldsort0: $TestData:valid_Search_ColumnNameAsName$
-      sortTypesort0: $TestData:valid_SortTypeDescending$
-      pageStart: $TestData:valid_PageStart$
-      pageFetch: $TestData:valid_PageFetch$
-      languageCode: $TestData:valid_LanguageCodeFrench$
-      
-    output.output-1-expected-pos-response:     
-      namedata0: $IGNORE$
-      langCodedata0: $TestData:valid_LanguageCodeFrench$   
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      totalRecord: $IGNORE$  
-      mapStatusdata0: $IGNORE$ 
+    output.output-1-expected-pos3-response:            
+      responsetime: $IGNORE$
   
   Admin_DeviceSearch_ASC_DeviceSpecId_pos:
     input.search-request:
@@ -556,18 +296,8 @@ testdata:
       pageFetch: $TestData:valid_PageFetch$
       languageCode: $TestData:valid_LanguageCodeArabic$
       
-    output.output-1-expected-pos-response:  
-      namedata0: $IGNORE$  
-      langCodedata0: $TestData:valid_LanguageCodeArabic$            
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      totalRecord: $IGNORE$   
-      mapStatusdata0: $IGNORE$        
+    output.output-1-expected-pos1-response:            
+      responsetime: $IGNORE$       
   
   Admin_DeviceSearch_DESC_DeviceSpecId_pos:
     input.search-request:
@@ -578,20 +308,10 @@ testdata:
       sortTypesort0: $TestData:valid_SortTypeDescending$
       pageStart: $TestData:valid_PageStart$
       pageFetch: $TestData:valid_PageFetch$
-      languageCode: $TestData:valid_LanguageCodeFrench$
+      languageCode: $TestData:valid_LanguageCodeEng$
       
-    output.output-1-expected-pos-response:     
-      namedata0: $IGNORE$
-      langCodedata0: $TestData:valid_LanguageCodeFrench$   
+    output.output-1-expected-pos2-response:   
       responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      totalRecord: $IGNORE$  
-      mapStatusdata0: $IGNORE$   
       
   Admin_DeviceSearch_Contains_Name_eng_pos:
     input.search-request:
@@ -604,18 +324,8 @@ testdata:
       pageFetch: $TestData:valid_PageFetch$
       languageCode: $TestData:valid_LanguageCodeEng$
       
-    output.output-1-expected-pos-response:     
-      namedata0: $IGNORE$
-      langCodedata0: $TestData:valid_LanguageCodeEng$  
+    output.output-1-expected-pos-response:  
       responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $IGNORE$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$
-      totalRecord: $IGNORE$  
-      mapStatusdata0: $IGNORE$  
       
   Admin_DeviceSearch_Contains_MacAddress_pos:
     input.search-request:
@@ -628,18 +338,8 @@ testdata:
       pageFetch: $TestData:valid_PageFetch$
       languageCode: $TestData:valid_LanguageCodeEng$
       
-    output.output-1-expected-pos-response:  
-      namedata0: $IGNORE$
-      langCodedata0: $TestData:valid_LanguageCodeEng$            
-      responsetime: $IGNORE$ 
-      createdDateTimedata0: $IGNORE$
-      iddata0: $IGNORE$
-      serialNumdata0: $IGNORE$
-      macAddressdata0: $TestData:valid_Device_MacAddress_Equals$
-      deviceSpecIddata0: $IGNORE$     
-      ipAddressdata0: $IGNORE$    
-      totalRecord: $IGNORE$
-      mapStatusdata0: $IGNORE$
+    output.output-1-expected-pos-response:            
+      responsetime: $IGNORE$
       
   Admin_DeviceSearch_Invalid_SortType_neg:
     input.search-request:
@@ -671,17 +371,7 @@ testdata:
       requesttime: $TIMESTAMPZ$
       
     output.output-1-expected-pos-response:
-     namedata0: $TestData:valid_Device_Name_eng_Equals$
-     langCodedata0: $TestData:valid_LanguageCodeEng$ 
      responsetime: $IGNORE$ 
-     createdDateTimedata0: $IGNORE$
-     iddata0: $IGNORE$
-     serialNumdata0: $IGNORE$
-     macAddressdata0: $IGNORE$
-     deviceSpecIddata0: $IGNORE$     
-     ipAddressdata0: $IGNORE$   
-     totalRecord: $IGNORE$ 
-     mapStatusdata0: $IGNORE$ 
      
   Admin_DeviceSearch_StartsWith_DeviceTypeName_eng_pos:
     input.search-request:
@@ -696,17 +386,7 @@ testdata:
       requesttime: $TIMESTAMPZ$
       
     output.output-1-expected-pos-response:
-     namedata0: $IGNORE$
-     langCodedata0: $TestData:valid_LanguageCodeEng$ 
-     responsetime: $IGNORE$ 
-     createdDateTimedata0: $IGNORE$
-     iddata0: $IGNORE$
-     serialNumdata0: $IGNORE$
-     macAddressdata0: $IGNORE$
-     deviceSpecIddata0: $IGNORE$     
-     ipAddressdata0: $IGNORE$   
-     totalRecord: $IGNORE$  
-     mapStatusdata0: $IGNORE$
+     responsetime: $IGNORE$
  
   Admin_DeviceSearch_Contains_DeviceTypeName_eng_pos:
     input.search-request:
@@ -720,18 +400,8 @@ testdata:
       languageCode: $TestData:valid_LanguageCodeEng$
       requesttime: $TIMESTAMPZ$
       
-    output.output-1-expected-pos-response:
-     namedata0: $IGNORE$
-     langCodedata0: $TestData:valid_LanguageCodeEng$ 
-     responsetime: $IGNORE$ 
-     createdDateTimedata0: $IGNORE$
-     iddata0: $IGNORE$
-     serialNumdata0: $IGNORE$
-     macAddressdata0: $IGNORE$
-     deviceSpecIddata0: $IGNORE$     
-     ipAddressdata0: $IGNORE$   
-     totalRecord: $IGNORE$   
-     mapStatusdata0: $IGNORE$    
+    output.output-1-expected-pos-response: 
+     responsetime: $IGNORE$   
  
   Admin_DeviceSearch_Contains_SerialNo_eng_pos:
     input.search-request:
@@ -746,17 +416,7 @@ testdata:
       requesttime: $TIMESTAMPZ$
       
     output.output-1-expected-pos-response:
-     namedata0: $IGNORE$
-     langCodedata0: $TestData:valid_LanguageCodeEng$ 
-     responsetime: $IGNORE$ 
-     createdDateTimedata0: $IGNORE$
-     iddata0: $IGNORE$
-     serialNumdata0: $IGNORE$
-     macAddressdata0: $IGNORE$
-     deviceSpecIddata0: $IGNORE$     
-     ipAddressdata0: $IGNORE$   
-     totalRecord: $IGNORE$  
-     mapStatusdata0: $IGNORE$      
+     responsetime: $IGNORE$     
      
   Admin_DeviceSearch_Contains_MapStatus_eng_pos:
     input.search-request:
@@ -770,18 +430,9 @@ testdata:
       languageCode: $TestData:valid_LanguageCodeEng$
       requesttime: $TIMESTAMPZ$
       
-    output.output-1-expected-pos-response:
-     namedata0: $IGNORE$
-     langCodedata0: $TestData:valid_LanguageCodeEng$ 
-     responsetime: $IGNORE$ 
-     createdDateTimedata0: $IGNORE$
-     iddata0: $IGNORE$
-     serialNumdata0: $IGNORE$
-     macAddressdata0: $IGNORE$
-     deviceSpecIddata0: $IGNORE$     
-     ipAddressdata0: $IGNORE$   
-     totalRecord: $IGNORE$     
-     mapStatusdata0: $IGNORE$     
+    output.output-1-expected-pos-response: 
+     responsetime: $IGNORE$  
+     totalRecord: $IGNORE$  
      
   Admin_DeviceSearch_InvalidPageFetch_neg:
     input.search-request:
@@ -830,16 +481,8 @@ testdata:
       requesttime: $TIMESTAMPZ$
       
     output.output-1-expected-pos-response:
-     namedata0: $TestData:valid_Device_Name_eng_Equals$
-     langCodedata0: $TestData:valid_LanguageCodeEng$ 
-     responsetime: $IGNORE$ 
-     createdDateTimedata0: $IGNORE$
-     iddata0: $IGNORE$
-     serialNumdata0: $IGNORE$
-     macAddressdata0: $IGNORE$
-     deviceSpecIddata0: $IGNORE$     
-     ipAddressdata0: $IGNORE$ 
-     mapStatusdata0: $IGNORE$   
+     responsetime: $IGNORE$
+     totalRecord: $IGNORE$  
    
   Admin_DeviceSearch_Invalid_RequestTime_neg:
     input.search-request:
@@ -892,16 +535,9 @@ testdata:
       columnNamefilters2: $TestData:valid_Search_ColumnNameAsDeviceTypeName$
       typefilters2: $TestData:valid_SearchTypeEquals$
       valuefilters2: $TestData:valid_DeviceTypeName_eng_Equals$
-    output.output-1-expected-pos1-response:
-      langCodedata0: $TestData:valid_LanguageCodeEng$
-      createdDateTimedata0: $IGNORE$
-      responsetime: $IGNORE$
-      fromRecord: $IGNORE$
+    output.output-1-expected-pos-response:
       totalRecord: $IGNORE$
-      toRecord: $IGNORE$
-      isActivedata0: true
-      isDeleteddata0: $IGNORE$
-      mapStatusdata0: $IGNORE$
+      responsetime: $IGNORE$
       
   Admin_DeviceSearch_Valid_TwoFilters_allFilterType_Equals:
     input.search-twoSearchValues-request:
@@ -916,14 +552,8 @@ testdata:
       columnNamefilters1: $TestData:valid_Search_ColumnNameAsDeviceTypeName$
       typefilters1: $TestData:valid_SearchTypeEquals$
       valuefilters1: $TestData:valid_DeviceTypeName_eng_Equals$
-    output.output-1-expected-pos1-response:
+    output.output-1-expected-pos-response:
       langCodedata0: $TestData:valid_LanguageCodeEng$
       createdDateTimedata0: $IGNORE$
-      responsetime: $IGNORE$
-      fromRecord: $IGNORE$
-      totalRecord: $IGNORE$
-      toRecord: $IGNORE$
-      isActivedata0: true
-      isDeleteddata0: $IGNORE$  
-      mapStatusdata0: $IGNORE$    
+      responsetime: $IGNORE$   
       

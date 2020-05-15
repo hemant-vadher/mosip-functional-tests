@@ -1,21 +1,21 @@
 {
   "id": "string",
   "version": "string",
-  "responsetime": "2020-05-15T10:20:26.200Z",
+  "responsetime": "2020-05-15T11:16:07.824Z",
   "response": {
     "fromRecord": 1,
     "toRecord": 1,
     "totalRecord": 2,
     "data": [
       {
-        "id": "TdeviceSF",
-        "name": "TestDevice",
-        "serialNum": "test serial",
+        "id": "TdeviceSF1",
+        "name": "TestDevice1",
+        "serialNum": "test serial1",
         "deviceSpecId": "TDSpec",
-        "macAddress": "test mac",
+        "macAddress": "test mac1",
         "langCode": "eng",
-        "zoneCode": "LFZL",
-        "zone": "Child1",
+        "zoneCode": "TPRNTZ",
+        "zone": "Parent",
         "deviceTypeName": "Finger Print Scanner",
         "mapStatus": "$IGNORE$",
         "isActive": true,

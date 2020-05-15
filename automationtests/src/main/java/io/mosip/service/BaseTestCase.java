@@ -59,6 +59,7 @@ public class BaseTestCase {
 	public String zonalAdminCookie = null;
 	public String zonalApproverCookie = null;
 	public String adminCookie = null;
+	public String autoTstUsrCkie = null;
 	public static KernelAuthentication kernelAuthLib = null;
 	public static CommonLibrary kernelCmnLib = null;
 	public static Map queries;
