@@ -1,6 +1,7 @@
 node {
 
  def branch = 'autotest_ravi'
+ def authPartnerDemo = 'authentication-partnerdemo-service'
  def projectToBuild = 'automationtests'
  stage('------- Checkout --------') {
   // Checkout only automation tests Module
@@ -12,17 +13,15 @@ node {
     userRemoteConfigs: [
      [url: 'https://github.com/mosip/mosip-functional-tests', credentialsId: 'e80f93ea-49d6-46b6-87df-f7d02dc0e1cf']
     ],
-    extensions: [
-
-     [$class: 'SparseCheckoutPaths', sparseCheckoutPaths: [
-      [$class: 'SparseCheckoutPath', path: '/'+projectToBuild + '/']
-     ]]
-
-    ],
    ])
   }
  }
-
+stage ('---------- mvn-clean-test-authPartnerDemo ---------------') {
+	  dir(branch+"/"+authPartnerDemo)
+  {
+	sh '/usr/local/maven/bin/mvn clean install'  	  
+  }
+  }
 
 stage ('---------- mvn-clean-test ---------------') {
 	  dir(branch+"/"+projectToBuild)
