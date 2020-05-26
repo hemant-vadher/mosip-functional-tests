@@ -26,18 +26,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.mosip.kernel.core.util.CryptoUtil;
-import io.mosip.kernel.crypto.jce.util.JWSValidation;
+import io.mosip.kernel.crypto.jce.core.CryptoCore;
+import io.swagger.annotations.Api;
+import lombok.Data;
 
 // 
 /**
  * @author Sanjay Murali
- * The Class DigitalSign is used to digitally sign the request.
+ * The Class JWSSignAndVerifyController is used to digitally sign the request.
  */
 @RestController
-public class DigitalSign {
+@Api(tags = { "JWS Signature" })
+public class JWSSignAndVerifyController {
 
 	@Autowired
-	private JWSValidation jwsValidation;
+	private CryptoCore cryptoCore;
 	
 	/**
 	 * Sign.
@@ -66,7 +69,7 @@ public class DigitalSign {
 		KeyFactory kf = KeyFactory.getInstance("RSA");
 		PrivateKey privateKey = kf.generatePrivate(new PKCS8EncodedKeySpec(Base64.getDecoder().decode(pKey)));
 
-		return jwsValidation.jwsSign(data, privateKey, certificate);	 
+		return cryptoCore.sign(data.getBytes("UTF-8"), privateKey, certificate);	 
 		 
 	}
 
@@ -92,22 +95,31 @@ public class DigitalSign {
 	 * @throws JoseException the jose exception
 	 * @throws InvalidKeySpecException the invalid key spec exception
 	 */
-	@PostMapping(path = "/verify", consumes=MediaType.TEXT_PLAIN, produces=MediaType.TEXT_PLAIN)
-	public String verify(@RequestBody String jwsSignature) throws KeyStoreException, NoSuchAlgorithmException,
+	@PostMapping(path = "/verify", consumes=MediaType.TEXT_PLAIN, produces=MediaType.APPLICATION_JSON)
+	public SignatureStatus verify(@RequestBody String jwsSignature) throws KeyStoreException, NoSuchAlgorithmException,
 	CertificateException, IOException, UnrecoverableEntryException, JoseException, InvalidKeySpecException {
-		if( jwsValidation.verifySignature(jwsSignature)) {
-			byte[] payload = CryptoUtil.decodeBase64(getPayloadFromJwsSingature(jwsSignature));
-			return "Signature is Valid.\nPayload:\n" + new String(payload);
+		SignatureStatus status = new SignatureStatus();
+		if( cryptoCore.verifySignature(jwsSignature)) {
+			status.setStatus("VALID");
+			status.setPayload(getPayloadFromJwsSingature(jwsSignature));
+		} else {
+			status.setStatus("INVALID");
 		}
-		return "Invalid Signature";
+		return status;
 	}
 	
-	protected String getPayloadFromJwsSingature(String jws) {
+	@PostMapping(path = "/getSplittedPayloadSectionFromJWS", consumes=MediaType.TEXT_PLAIN, produces=MediaType.TEXT_PLAIN)
+	public String getSplittedPayloadSectionFromJwsSingature(@RequestBody String jws) {
 		String[] split = jws.split("\\.");
 		if(split.length >= 2) {
 			return split[1];
 		}
 		return jws;
+	}
+	
+	@PostMapping(path = "/getPayloadFromJWS", consumes=MediaType.TEXT_PLAIN, produces=MediaType.TEXT_PLAIN)
+	public String getPayloadFromJwsSingature(@RequestBody String jws) {
+		return new String(CryptoUtil.decodeBase64(getSplittedPayloadSectionFromJwsSingature(jws)));
 	}
 
 
@@ -205,4 +217,11 @@ public class DigitalSign {
 
 		return kp;
 	}*/
+	
+	@Data
+	public static class SignatureStatus {
+		private String status;
+		private String payload;
+		
+	}
 }

@@ -3,6 +3,7 @@ package io.mosip.admin.tests;
 import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -10,6 +11,7 @@ import org.apache.log4j.Logger;
 import org.testng.ITest;
 import org.testng.ITestResult;
 import org.testng.Reporter;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -29,6 +31,7 @@ import io.mosip.authentication.fw.util.ReportUtil;
 import io.mosip.authentication.fw.util.RunConfigUtil;
 import io.mosip.authentication.fw.util.TestParameters;
 import io.mosip.authentication.testdata.TestDataProcessor;
+import io.mosip.kernel.util.KernelDataBaseAccess;
 
 public class DeviceTypeFilter extends AdminTestUtil implements ITest {
 	private static final Logger logger = Logger.getLogger(DeviceTypeFilter.class);
@@ -37,6 +40,7 @@ public class DeviceTypeFilter extends AdminTestUtil implements ITest {
 	private String TESTDATA_FILENAME;
 	private String testType;
 	private int invocationCount = 0;
+	KernelDataBaseAccess masterDB = new KernelDataBaseAccess();
 
 	/**
 	 * Set Test Type - Smoke, Regression or Integration
@@ -170,5 +174,19 @@ public class DeviceTypeFilter extends AdminTestUtil implements ITest {
 		  if(!OutputValidationUtil.publishOutputResult(ouputValid)) throw new
 		  AdminTestException("Failed at output validation");	
 		
+	}
+	/**
+	 * this method is for deleting or updating the inserted data in db for testing 
+	 */
+	@AfterClass(alwaysRun = true)
+	public void cleanup() throws AdminTestException {
+		/*String dltQueryKeys[] = queries.get("allAutoDlt").toString().split(",");
+		List<String> dltQueries = new LinkedList<String>();
+		for(String queryKeys: dltQueryKeys)
+			dltQueries.add(queries.get(queryKeys).toString());
+		if (masterDB.executeQueries(dltQueries, "masterdata"))
+			logger.info("deleted test data for automation");
+		else
+			logger.info("not able to delete test data for automation using query.properties");*/
 	}
 }

@@ -80,6 +80,14 @@ public class DeviceSearch extends AdminTestUtil implements ITest {
 			logger.info("created test data for automation");
 		else
 			logger.info("not able to create test data for automation using query.properties");*/
+		String dltQueryKeys[] = queries.get("allAutoDlt").toString().split(",");
+		List<String> dltQueries = new LinkedList<String>();
+		for(String queryKeys: dltQueryKeys)
+			dltQueries.add(queries.get(queryKeys).toString());
+		if (masterDB.executeQueries(dltQueries, "masterdata"))
+			logger.info("deleted test data for automation");
+		else
+			logger.info("not able to delete test data for automation using query.properties");
 	}
 
 	/**
@@ -205,18 +213,5 @@ public class DeviceSearch extends AdminTestUtil implements ITest {
 	
    }
 
-	/**
-	 * this method is for deleting or updating the inserted data in db for testing 
-	 */
-	@AfterClass(alwaysRun = true)
-	public void cleanup() throws AdminTestException {
-		/*String dltQueryKeys[] = queries.get("allAutoDlt").toString().split(",");
-		List<String> dltQueries = new LinkedList<String>();
-		for(String queryKeys: dltQueryKeys)
-			dltQueries.add(queries.get(queryKeys).toString());
-		if (masterDB.executeQueries(dltQueries, "masterdata"))
-			logger.info("deleted test data for automation");
-		else
-			logger.info("not able to delete test data for automation using query.properties");*/
-	}
+	
 }

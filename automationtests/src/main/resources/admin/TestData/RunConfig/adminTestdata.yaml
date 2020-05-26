@@ -306,9 +306,9 @@ invalid_Device_Name:
      
 #deviceType API
 valid_DeviceTypeName_eng_Equals:
-     - Finger Print Scanner
+     - Finger test Scanner
 valid_DeviceTypeName_ara_Equals:
-     - ماسح بصمة الأصبع
+     - اختبار الماسح الضوئي
 valid_DeviceTypeName_fra_Equals:
      - Scanner dempreintes digitales             
 
@@ -322,21 +322,25 @@ InvalidFilterType:
 
 #deviceSpec Search
 valid_DeviceSpec_Name_eng_Equals:
-     - Slab Fingerprint
+     - Finger Test
 valid_DeviceSpec_Name_ara_Equals:
-     - لوح بصمة
+     - اختبا
 valid_DeviceSpec_Name_fra_Equals:
      - Slab Fingerprint          
 valid_DeviceSpec_Brand_eng_Equals:
-     - Syncbyte
+     - brand
 valid_DeviceSpec_Brand_ara_Equals:
-     - سافران مورفو
+     - العلامة التجارية
 valid_DeviceSpec_Brand_fra_Equals:
      - Syncbyte          
 valid_DeviceSpec_Model_Equals:
-     - Greenbit DactySc         
+     - model         
+valid_DeviceSpec_Model_Equals_ara:
+     - نموذج
 valid_DeviceSpec_DeviceTypeName_Equals:  
-     - Finger Print Scanner   
+     - Finger test Scanner   
+valid_DeviceSpec_DeviceTypeName_Equals_ara:  
+     - اختبار الماسح الضوئي
 valid_DeviceSpec_DeviceTypeName_Output:
      - FRS   
 

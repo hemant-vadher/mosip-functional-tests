@@ -1,26 +1,26 @@
 {
   "id": "string",
   "version": "string",
-  "responsetime": "2020-05-15T10:20:26.200Z",
+  "responsetime": "2020-05-18T16:09:30.533Z",
   "response": {
     "fromRecord": 1,
     "toRecord": 1,
     "totalRecord": 2,
     "data": [
       {
+        "isActive": true,
+        "createdBy": "mosipautouser",
+        "createdDateTime": "2019-07-26T12:18:40.718Z",
         "id": "TdeviceSF",
         "name": "TestDevice",
         "serialNum": "test serial",
         "deviceSpecId": "TDSpec",
         "macAddress": "test mac",
         "langCode": "eng",
-        "zoneCode": "LFZL",
-        "zone": "Child1",
-        "deviceTypeName": "Finger Print Scanner",
-        "mapStatus": "$IGNORE$",
-        "isActive": true,
-        "createdBy": "mosipautouser",
-        "createdDateTime": "2019-07-26T12:18:40.718Z"
+        "zoneCode": "TPRNTZ",
+        "zone": "Parent",
+        "deviceTypeName": "Finger test Scanner",
+        "mapStatus": "map test center"
       }
     ]
   }
