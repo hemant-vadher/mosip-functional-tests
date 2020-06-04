@@ -1,6 +1,6 @@
 node {
 
- def branch = 'master'
+ def branch = '1.1'
  def projectToBuild = 'automationtests'
  def authPartnerDemo = 'authentication-partnerdemo-service'
  stage('------- Checkout --------') {
